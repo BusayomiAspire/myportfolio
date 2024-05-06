@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Screen Display Switcher</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .dropdown {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+</style>
+</head>
+<body>
+<div class="container" id="content">
+  <h1>Welcome to Different Screen Display</h1>
+</div>
+<div class="dropdown">
+  <label for="displaySelector">Select Display:</label>
+  <select id="displaySelector">
+    <option value="default">Default</option>
+    <option value="light">Light Mode</option>
+    <option value="dark">Dark Mode</option>
+  </select>
+</div>
+<script>
+  const displaySelector = document.getElementById("displaySelector");
+  const container = document.getElementById("content");
+
+  displaySelector.addEventListener("change", () => {
+    const selectedValue = displaySelector.value;
+    if (selectedValue === "light") {
+      container.style.backgroundColor = "#f5f5f5";
+    } else if (selectedValue === "dark") {
+      container.style.backgroundColor = "#333";
+    } else {
+      container.style.backgroundColor = "transparent";
+    }
+  });
+</script>
+</body>
+</html>

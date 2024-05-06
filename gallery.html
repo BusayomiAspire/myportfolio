@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Image Gallery</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #f5f5f5;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  header img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 20px;
+  }
+  .image-gallery img {
+    max-width: 100%;
+    height: auto;
+  }
+  footer {
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <img src="your_logo_url" alt="Your Logo">
+  <h1>Your Image Gallery</h1>
+</header>
+<div class="image-gallery">
+  <!-- Replace the following placeholders with your image URLs -->
+  <img src="image1.jpg" alt="Image 1">
+  <img src="image2.jpg" alt="Image 2">
+  <!-- Add more image elements here as needed -->
+</div>
+<footer>
+  <p>&copy; <span id="year"></span> <span id="name">Your Name</span>. All rights reserved.</p>
+</footer>
+<script>
+  const yearSpan = document.getElementById('year');
+  const nameSpan = document.getElementById('name');
+  const currentYear = new Date().getFullYear();
+  yearSpan.textContent = currentYear;
+  nameSpan.textContent = 'Your Name';
+</script>
+</body>
+</html>
